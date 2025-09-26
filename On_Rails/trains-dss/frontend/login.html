@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d1117; /* Dark background */
+      color: #f0f6fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-container {
+      background: #161b22; /* Card dark background */
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+      width: 320px;
+      text-align: center;
+    }
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #58a6ff; /* Blue heading */
+    }
+    .login-container input {
+      width: 90%;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      background: #0d1117;
+      color: #f0f6fc;
+      font-size: 14px;
+    }
+    .login-container input:focus {
+      border-color: #58a6ff;
+      outline: none;
+      box-shadow: 0 0 5px #58a6ff;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: #1f6feb; /* Blue button */
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .login-container button:hover {
+      background: #1158c7; /* Darker blue */
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form onsubmit="redirectToIndex(event)">
+      <input type="text" id="name" name="name" placeholder="Enter your Name" required>
+      <input type="tel" id="mobile" name="mobile" placeholder="Enter Mobile Number" required pattern="[0-9]{10}">
+      <input type="tel" id="emergency" name="emergency" placeholder="Enter Emergency Number" required pattern="[0-9]{10}">
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    function redirectToIndex(event) {
+      event.preventDefault(); // prevent default form submission
+      window.location.href = "http://127.0.0.1:8000/"; // redirect to index.html
+    }
+  </script>
+</body>
+</html>

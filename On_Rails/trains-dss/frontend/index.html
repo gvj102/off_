@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Train DSS Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+<body>
+  <div class="header">
+    <h1>🚉 Train Decision Support System</h1>
+    <button id="theme-toggle">🌙 Toggle Theme</button>
+  </div>
+
+  <div class="container">
+  <!-- Train Panel -->
+  <div class="panel" id="train-panel">
+    <h2>Train Info</h2>
+    <label>Train Number: <input type="text" id="train-no" value="17307"></label>
+    <button id="check-train">Check Status</button>
+    <p>🚆 <span id="train-name">-</span></p>
+    <p>📍 Current: <span id="current-station">-</span></p>
+    <p>🎯 Next: <span id="next-station">-</span></p>
+    <p>⏱ Scheduled: <span id="scheduled-arrival">-</span></p>
+    <p>⌛ Delay: <span id="delay-min">-</span> min</p>
+    <p>📡 Predicted Delay: <span id="predicted-delay">-</span> min</p>
+    <!-- 👇 New: Delay Reason -->
+    <p>⚠️ Reason: <span id="delay-reason">-</span></p>
+    <p>🛤 Platform: <span id="platform">-</span></p>
+
+    <!-- Date at bottom -->
+    <hr>
+    <p id="today-date" style="font-style: italic; color: #666; text-align: center;"></p>
+  </div>    
+
+
+    <!-- Weather Panel -->
+    <div class="panel" id="weather-panel">
+      <h2>Weather Info</h2>
+      <label class="weather-label">City: <input type="text" id="city" value="Delhi"></label>
+      <button id="get-weather">Get Weather</button>
+      <div id="weather-info">
+        <p>🌍 <span id="city-name">N/A</span></p>
+        <p>🌡 <span id="temperature">N/A</span></p>
+        <p>☁ <span id="condition">N/A</span></p>
+        <p>💧 <span id="humidity">N/A</span></p>
+        <p>🌬 <span id="wind-speed">N/A</span></p>
+      </div>
+    </div>
+
+    <!-- SOS Panel -->
+    <div class="panel" id="sos-panel">
+      <h2>🚨 SOS</h2>
+      <button onclick="sendSOS('Hospital')">Emergency Health Issue</button>
+      <button onclick="sendSOS('Police Station')">Report Robbery</button>
+      <button onclick="sendSOS('Fire Station')">Fire Accident</button>
+      <button onclick="sendEmergencyMessage()">Send a message to Emergency Number</button>
+      <div id="sos-info"></div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
